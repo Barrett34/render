@@ -4,6 +4,8 @@ import time
 
 st.header('Tossing a Coin')
 
+chart = st.line_chart([0.5])
+
 def toss_coin(n):
 
     trial_outcomes = scipy.stats.bernoulli.rvs(p=0.5, size=n)
@@ -27,5 +29,4 @@ start_button = st.button('Run')
 
 if start_button:
     st.write(f'Running the experient of {number_of_trials} trials.')
-
-st.write('It is not a functional application yet. Under construction.')
+    mean = toss_coin(number_of_trials)
